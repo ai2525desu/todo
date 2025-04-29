@@ -10,4 +10,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
   && mv composer.phar /usr/local/bin/composer \
   && composer self-update
 
+# ユーザーをrootではなく一般ユーザーで使用するための設定
+RUN useradd -m ai2525desu
+
 WORKDIR /var/www
