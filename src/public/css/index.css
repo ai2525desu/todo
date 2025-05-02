@@ -1,0 +1,173 @@
+/* 成功時の表示 */
+.todo__alert--succes {
+    padding: 10px 30px;
+    border-color: #badbcc;
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+/* エラー発生時の表示 */
+.todo__alert--danger {
+    padding: 10px 0;
+    border-color: #f5c2c7;
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+/* エラー内容をulで表示するときに外余白を０指定 */
+.todo__alert-danger ul {
+    margin: 0;
+}
+
+/* todo__content全体の指定 */
+.todo__content {
+    margin: 0 auto;
+    /*
+    不要：margin-top: 30px;->全体の外余白にするのではなく、paddingで上下に余白設定
+    元padding: 30px 15px;
+     */
+    padding: 60px 15px;
+    max-width: 1230px;
+}
+
+/* create-form全体への指定 */
+.create-form {
+    margin: 0 auto;
+    width: 70%;
+    /* 不要：height: 40px; */
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* create-form__itemへの指定 */
+.create-form__item {
+    width: 70%;
+}
+
+/* inputに対する指定 */
+.create-form__item-input {
+    padding: 10px;
+    /* width: 600px; */
+    width: 100%;
+    /* height: 100%; */
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    /* 不要：appearance: none; */
+}
+
+/* create-form__buttonに対する指定 */
+.create-form__button {
+    width: 20%;
+}
+
+/* button-submit（作成ボタン）に対する指定 */
+.create-form__button-submit {
+    background: #000;
+    color: #fff;
+    /* 足りなかった↓ */
+    cursor: pointer;
+    /* 不要text-align: center; */
+    /* padding: 10px 40px; */
+    padding: 10px 40px;
+    /* height: 100%; */
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+}
+
+.todo-table {
+    /* margin: 0 auto; */
+    margin: 30px auto;
+    /* 不要：margin-top: 50px; */
+    width: 70%;
+    /* 左揃えの指定 */
+    text-align: left;
+}
+
+
+.todo-table__inner {
+    width: 100%;
+}
+
+
+.todo-table__row {
+    border-bottom: 1px solid #ddd;
+}
+
+.todo-table__item {
+    padding: 10px;
+}
+
+.todo-table__header {
+    font-weight: bold;
+    /* 不要：font-size: 18px; */
+    text-align: left;
+    padding: 10px 20px;
+    width: 20%;
+}
+
+/* 最初のtodo-table__itemに指定 */
+.todo-table__item:first-of-type {
+    padding: 12px;
+    width: 90%;
+}
+
+/* update-form全体への指定 */
+.update-form {
+    display: flex;
+    justify-content: space-between;
+    /* display:flexの際に、垂直方向にブロックをcenterに揃える指定 */
+    align-items: center;
+}
+
+/* update-form___itemに指定 */
+.update-form__item {
+    width: 80%;
+    /* テキストの行間調整 */
+    line-height: 50%;
+}
+
+/* inputに対する指定 */
+.update-form__item-input {
+    /* 追記：幅１００％ */
+    width: 100%;
+    /* 追記：ボタンを選択した際のoutlineをなくす指定 */
+    outline: none;
+    border: none;
+}
+
+/* update-buttonに対する大きさ指定 */
+.update-form__button {
+    width: 50px;
+}
+
+.update-form__button-submit {
+    background: #0000ff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    /* 幅：100% */
+    width: 100%;
+    /* 追記：カーソルポインター */
+    cursor: pointer;
+}
+
+/* delete-buttonに対する大きさの指定 */
+.delete-form__button {
+    width: 50px;
+}
+
+.delete-form__button-submit {
+    background: #f00;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    /* 幅：100% */
+    width: 100%;
+    /* 追記：カーソルポインター */
+    cursor: pointer;
+}
