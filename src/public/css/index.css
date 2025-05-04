@@ -75,6 +75,11 @@
     height: 40px;
     border: none;
     border-radius: 3px;
+    /* ボタンが画面幅によって縮小して文字が改行されてしまうのを防ぐ指定二つ追加 */
+    /* ボタンの最小幅を設定 */
+    min-width: 80px;
+    /* 文字の改行が自動的にされないように設定 */
+    white-space: nowrap;
 }
 
 .todo-table {
