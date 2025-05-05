@@ -5,44 +5,11 @@
 @endsection
 
 @section('content')
-<!-- メッセージの記述 -->
+<!-- エラーメッセージの記述 -->
 <div class="todo__alert">
-    <!-- Todoの作成が成功した場合のメッセージ表示 -->
-    @if (session('succesMessage'))
     <div class="todo__alert--succes">
-        <!-- 変更前：Todoを作成しました -->
-        {{ session('succesMessage') }}
+        Todoを作成しました
     </div>
-    @endif
-    <!-- エラーメッセージの表示 -->
-    <!-- ①最初に自身で考えたコード
-    @if ($errors->has('content'))
-    <div class="todo__alert--danger">
-        @error('content')
-            {{ $message }}
-        @enderror
-    </div>
-    @endif -->
-    <!-- ②解答を受けて考えた自身の作成したコードの改良版 -->
-    <!-- @if ($errors->has('content'))
-    <div class="todo__alert--danger">
-        @foreach ($errors->get('content') as $message)
-        <ul>
-            <li>{{ $message }}</li>
-        </ul>
-        @endforeach
-    </div>
-    @endif -->
-    <!-- 解答 -->
-    @if ($errors->any())
-    <div class="todo__alert--danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
 </div>
 
 <!-- 表示するコンテンツの内容 -->
@@ -68,7 +35,7 @@
             @foreach($todos as $todo)
             <tr class="todo-table__row">
                 <td class="todo-table__item">
-                <form class="update-form">
+                    <form class="update-form">
                         <div class="update-form__item">
                             <input class="update-form__item-input" type="text" value="{{ $todo['content']}}">
                             <!-- <p class="update-form__item-input">{{ $todo['content']}}</p> -->

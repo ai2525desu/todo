@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // モデルの使用
 use App\Models\Todo;
-// フォームリクエストの反映
-use App\Http\Requests\TodoRequest;
 
 class TodoController extends Controller
 {
@@ -19,11 +17,10 @@ class TodoController extends Controller
     }
 
     // 追加機能/todosにおけるstoreアクションの反映
-    public function store(TodoRequest $request)
+    public function store(Request $request)
     {
         $todo = $request->only(['content']);
         Todo::create($todo);
-        // return redirect('/')からwithメソッドを使用してメッセージを表示する。
-        return redirect('/')->with('succesMessage', 'Todoを作成しました');
+        return redirect('/');
     }
 }
