@@ -15,4 +15,7 @@ use App\Http\Controllers\TodoController;
 |
 */
 
+// indexアクションにつながる
 Route::get('/', [TodoController::class, 'index']);
+// storeアクションにつながる
+Route::post('/todos', [TodoController::class, 'store']);
