@@ -24,7 +24,7 @@ class TodoController extends Controller
         $todo = $request->only(['content']);
         Todo::create($todo);
         // return redirect('/')からwithメソッドを使用してメッセージを表示する。
-        return redirect('/')->with('message', 'Todoを作成しました');
+        return redirect('/')->with('succesMessage', 'Todoを作成しました');
     }
 
     // 更新機能/todos/updateにおけるupdateアクション
@@ -36,13 +36,13 @@ class TodoController extends Controller
         // 更新したいTodoの内容をフォームから送信されたIDで検索し、updateメソッドでcontentを更新するために、モデルでidが検索できるようにする
         Todo::find($request->id)->update($todo);
         // 更新した際にメッセージが表示されるようにwithメソッドを使用
-        return redirect('/')->with('message', 'Todoを更新しました');
+        return redirect('/')->with('updateMessage', 'Todoを更新しました');
     }
 
     // 削除機能の追加
     public function destroy(Request $request)
     {
         Todo::find($request->id)->delete();
-        return redirect('/')->with('message', 'Todoを削除しました');
+        return redirect('/')->with('destroyMessage', 'Todoを削除しました');
     }
 }

@@ -15,7 +15,7 @@ class CreateTodosTable extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
-            $table->string('content', 20);
+            $table->text('content');
             // 下記でcreated_atとupdated_atの２つをカラムに追加できる
             $table->timestamps();
         });

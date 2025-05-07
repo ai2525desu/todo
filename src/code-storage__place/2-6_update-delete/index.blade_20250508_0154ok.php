@@ -7,10 +7,23 @@
 @section('content')
 <!-- メッセージの記述 -->
 <div class="todo__alert">
-    @if (session('message'))
+    <!-- Todoの作成が成功した場合のメッセージ表示 -->
+    @if (session('succesMessage'))
     <div class="todo__alert--succes">
         <!-- 変更前：Todoを作成しました -->
-        {{ session('message') }}
+        {{ session('succesMessage') }}
+    </div>
+    @endif
+    <!-- Todoが更新されたときに表示するメッセージ -->
+    @if (session('updateMessage'))
+    <div class="todo__alert--update">
+        {{ session('updateMessage') }}
+    </div>
+    @endif
+    <!-- Todoが削除されたときに表示するメッセージ -->
+    @if (session('destroyMessage'))
+    <div class="todo__alert--destro">
+        {{ session('destroyMessage') }}
     </div>
     @endif
     <!-- エラーメッセージの表示 -->
