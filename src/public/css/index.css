@@ -1,5 +1,7 @@
-/* 成功時、更新時、削除時のメッセージ表示 */
-.todo__alert--succes {
+/* 成功時、更新時、削除時の表示 */
+.todo__alert--succes,
+.todo__alert--update,
+.todo__alert--destroy {
     padding: 10px 30px;
     border-color: #badbcc;
     background-color: #d1e7dd;

@@ -7,31 +7,27 @@
 @section('content')
 <!-- メッセージの記述 -->
 <div class="todo__alert">
-    @if (session('message'))
+    <!-- Todoの作成が成功した場合のメッセージ表示 -->
+    @if (session('succesMessage'))
     <div class="todo__alert--succes">
         <!-- 変更前：Todoを作成しました -->
-        {{ session('message') }}
+        {{ session('succesMessage') }}
+    </div>
+    @endif
+    <!-- Todoが更新されたときに表示するメッセージ -->
+    @if (session('updateMessage'))
+    <div class="todo__alert--update">
+        {{ session('updateMessage') }}
+    </div>
+    @endif
+    <!-- Todoが削除されたときに表示するメッセージ -->
+    @if (session('destroyMessage'))
+    <div class="todo__alert--destro">
+        {{ session('destroyMessage') }}
     </div>
     @endif
     <!-- エラーメッセージの表示 -->
-    <!-- ①最初に自身で考えたコード
-    @if ($errors->has('content'))
-    <div class="todo__alert--danger">
-        @error('content')
-            {{ $message }}
-        @enderror
-    </div>
-    @endif -->
-    <!-- ②解答を受けて考えた自身の作成したコードの改良版 -->
-    <!-- @if ($errors->has('content'))
-    <div class="todo__alert--danger">
-        @foreach ($errors->get('content') as $message)
-        <ul>
-            <li>{{ $message }}</li>
-        </ul>
-        @endforeach
-    </div>
-    @endif -->
+    <!-- 自身で考えたコードはNotion -->
     <!-- 解答 -->
     @if ($errors->any())
     <div class="todo__alert--danger">
@@ -68,9 +64,9 @@
             <tr class="todo-table__row">
                 <td class="todo-table__item">
                 <!-- actionとmethodの追加：PATCHメソッドのため、＠の記述もあり -->
-                <form class="update-form" action="/todos/update" method="post">
-                    @method('patch')
-                    @csrf
+                    <form class="update-form" action="/todos/update" method="post">
+                        @method('patch')
+                        @csrf
                         <div class="update-form__item">
                             <!-- $todo['content']-->
                             <input class="update-form__item-input" type="text" name="content" value="{{ $todo['content']}}">
