@@ -50,7 +50,7 @@
 .create-form__item-input {
     width: 100%;
     /* 自身=>padding: 10px 40px; */
-    padding: 10px 40px;
+    padding: 10px;
     height: 40px;
     border: 1px solid #ddd;
     border-radius: 3px;
