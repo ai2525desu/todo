@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 // TodoControllerの使用
 use App\Http\Controllers\TodoController;
-
+// CategoryControllerの使用
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +16,7 @@ use App\Http\Controllers\TodoController;
 |
 */
 
+// Todoに対するルーティング
 // indexアクションにつながる
 Route::get('/', [TodoController::class, 'index']);
 // storeアクションにつながる
@@ -23,3 +25,6 @@ Route::post('/todos', [TodoController::class, 'store']);
 Route::patch('/todos/update', [TodoController::class, 'update']);
 // destroyアクション
 Route::delete('/todos/delete', [TodoController::class, 'destroy']);
+
+// カテゴリに対するルーティング
+Route::get('/categories', [CategoryController::class, 'index']);

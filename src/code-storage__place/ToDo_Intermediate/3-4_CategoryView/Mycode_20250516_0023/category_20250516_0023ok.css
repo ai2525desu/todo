@@ -1,0 +1,152 @@
+/* カテゴリ作成成功時の装飾 */
+.category__alert--success {
+    padding: 10px 30px;
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border-color: #badbcc;
+}
+
+/* エラー時のメッセージ装飾 */
+.category__alert--danger {
+    background-color: #f8d7da;
+    color: #842029;
+    border-color: #f5c2c7;
+}
+
+/* エラーメッセージが複数表示されたときの外余白０設定 */
+.category__alert--danger ul {
+    margin: 0;
+}
+
+/* 
+・表示したいコンテンツまとめての指定
+・さらに挑戦で、width:70%;をコンテンツ全体に指定してやってみる。
+ */
+.category__content {
+    margin: 0 auto;
+    padding: 30px 10px;
+    max-width: 1230px;
+    width: 70%;
+}
+
+/* create-form全体に指定 */
+.create-form {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+/* formの入力箇所を表すクラス */
+.create-form__item {
+    /* create-form全体の幅のなかで70％入力部分に充てる */
+    width: 70%;
+}
+
+/* inputタグに対しての指定 */
+.create-form__item-input {
+    width: 100%;
+    padding: 10px 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* buttonの箇所のクラス */
+.create-form__button {
+    width: 20%;
+}
+
+/* button-submitの部分に対して指定 */
+.create-form__button-submit {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    height: 40px;
+    min-width: 80px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* category-table全体の指定 */
+.category-table {
+    margin: 30px auto;
+}
+
+/* テーブルの内容を囲うクラス */
+.category-table__inner {
+    width: 100%;
+}
+
+/* テーブル内のtrのクラス */
+.category-table__row {
+    border-bottom: 1px solid #ddd;
+}
+
+/* テーブル内のtdのクラス */
+.category-table__item {
+    padding: 10px;
+}
+
+/* 
+first-of-type=>指定した要素の最初の要素に下記の指定を反映
+*/
+.category-table__item:first-of-type {
+    padding: 10px;
+    width: 90%;
+}
+
+/* テーブルヘッダー */
+.category-table__header {
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+}
+
+/* update-form */
+.update-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* update-formのcontentに対して指定 */
+.update-form__content {
+    width: 80%;
+    line-height: 50%;
+}
+
+/* 更新で入力する際のinputタグへの指定 */
+.update-form__content-input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+/* 更新ボタンと削除ボタンの共通の大きさ指定 */
+.category-table-form__button {
+    width: 50px;
+}
+
+/* 更新ボタンと削除ボタンのbuttonタグに対する共通指定 */
+.category-table-form__button-submit {
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* 更新ボタンの背景色設定 */
+.category-table-form__button--update {
+    background-color: blue;
+}
+
+/* 削除ボタンの背景設定 */
+.category-table-form__button--delete {
+    background-color: red;
+}
