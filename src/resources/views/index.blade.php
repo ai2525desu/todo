@@ -54,7 +54,7 @@
             <input class="create-form__item-input" type="text" name="content" value="{{ old('content') }}">
             <!-- カテゴリの選択部分 -->
             <select class="create-form__item-select" name="category_id">
-            <option value="" disabled selected style="display:none">カテゴリ</option>
+                <option value="" disabled selected style="display:none">カテゴリ</option>
                 @foreach ($categories as $category)
                 <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
                 @endforeach
@@ -73,7 +73,8 @@
         <div class="search-form__item">
             <input class="search-form__item-input" type="text" name="keyword" value="{{ old('keyword') }}">
             <select class="search-form__item-select" name="category_id">
-                <option value="" disabled selected style="display:none">カテゴリ</option>
+                <!--  もともと<option value="" disabled selected style="display:none">カテゴリ</option> -->
+                <option value="" selected>カテゴリを選択</option>
                 @foreach ($categories as $category)
                 <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
                 @endforeach
